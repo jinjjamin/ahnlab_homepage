@@ -1,0 +1,119 @@
+/* Pretendard */
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Thin.woff2') format('woff2'),
+url('../font/Pretendard-Thin.woff') format('woff'),
+url('../font/Pretendard-Thin.otf') format('opentype');font-weight:100;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-ExtraLight.woff2') format('woff2'),
+url('../font/Pretendard-ExtraLight.woff') format('woff'),
+url('../font/Pretendard-ExtraLight.otf') format('opentype');font-weight:200;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Light.woff2') format('woff2'),
+url('../font/Pretendard-Light.woff') format('woff'),
+url('../font/Pretendard-Light.otf') format('opentype');font-weight:300;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Regular.woff2') format('woff2'),
+url('../font/Pretendard-Regular.woff') format('woff'),
+url('../font/Pretendard-Regular.otf') format('opentype');font-weight:400;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Medium.woff2') format('woff2'),
+url('../font/Pretendard-Medium.woff') format('woff'),
+url('../font/Pretendard-Medium.otf') format('opentype');font-weight:500;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-SemiBold.woff2') format('woff2'),
+url('../font/Pretendard-SemiBold.woff') format('woff'),
+url('../font/Pretendard-SemiBold.otf') format('opentype');font-weight:600;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Bold.woff2') format('woff2'),
+url('../font/Pretendard-Bold.woff') format('woff'),
+url('../font/Pretendard-Bold.otf') format('opentype');font-weight:700;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-ExtraBold.woff2') format('woff2'),
+url('../font/Pretendard-ExtraBold.woff') format('woff'),
+url('../font/Pretendard-ExtraBold.otf') format('opentype');font-weight:800;font-style:normal; }
+
+@font-face {font-family:'Pretendard';src:url('../font/Pretendard-Black.woff2') format('woff2'),
+url('../font/Pretendard-Black.woff') format('woff'),
+url('../font/Pretendard-Black.otf') format('opentype');font-weight:900;font-style:normal; }
+
+/* reset */
+html, body { position:relative; -webkit-font-smoothing:antialiased; height:100%; touch-action:auto; }
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, button, address, em, img, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, hr { margin:0; padding:0; box-sizing:border-box; }
+html { -webkit-touch-callout:none;margin:0 auto}
+body { padding:0; background: #fff; font-family:'Pretendard', sans-serif; font-size:16px; font-weight:400; color:#000; box-sizing:border-box; min-width:280px; letter-spacing:-0.048em; overflow-y:hidden}
+h1, h2, h3, h4, h5, h6 { font-weight:normal }
+ol, ul, li { list-style:none }
+table { width:100%; border-collapse:collapse; border-spacing:0 }
+form, fieldset, iframe { display:block; border:0 }
+img, button { border:0 none; vertical-align:middle }
+hr { height:0; display:none }
+i, em, address { font-style:normal }
+label, button { cursor:pointer }
+caption, legend { width:0; height:0; margin:0; padding:0; text-indent:-9999em; overflow:hidden; font-size:0; }
+.blind { position:absolute !important; left:-9999em; width:0; height:0; margin:0; padding:0; text-indent:-9999em; overflow:hidden; font-size:0; line-height:0; }
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption { display:block; box-sizing:border-box; }
+input, textarea, select { margin:0; padding:0; font-family:'Pretendard', sans-serif; font-size:15px; color:#000;; vertical-align:middle; border-radius:0; box-shadow:none; box-sizing:border-box;letter-spacing:-0.048em; }
+select { appearance:none; -webkit-appearance:none; -moz-appearance:none; }
+select::-ms-expand { display:none }
+textarea { border: 1px solid #333; resize:none; overflow-y:auto; -webkit-overflow-scrolling: touch; }
+button { overflow:visible; margin:0; padding:0; border:0 none; background:none; font-family:'Pretendard', sans-serif; font-weight:400; vertical-align:top; cursor:pointer; color:#000;text-align:left;letter-spacing:-0.058em; }
+button::-moz-focus-inner { border:0; padding:0; }
+a { color:#333950; text-decoration:none; word-break:break-all; }
+a:link, a:visited, a:hover, a:active, a:focus { text-decoration:none; }
+input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
+
+/* Layout*/
+#wrap{position:relative;overflow-y:auto}
+.container{position:relative;padding-top:68px;height:100%}
+#contents{padding:0 18px}
+
+/* Header */
+#header{position:fixed;top:0;left:0;right:0;display:flex;align-items: center;justify-content: space-between;height:60px;background:transparent;padding:0 18px;z-index:10}
+#header > div{position:relative;z-index:10}
+#header .alignCenter{position:absolute;top:0;bottom:0;left:0;right:0;z-index:5;display:flex;align-items: center;height:100%;justify-content: center;}
+#header .pageTitle{font-size:16px;font-weight:700;text-align:center;}
+#header a{display:flex;align-items: center;width:28px;height:28px;background-repeat:no-repeat;background-position:0 0;background-size:28px;text-indent:-9999em;}
+#header a.btnHeadPrev{background-image:url(/public/images/btn_head_prev.svg);}
+#header a.btnHeadAllmenu{background-image:url(/public/images/btn_head_allmenu.svg);}
+#header a.logo{width:65px;height:15px;background:url(/public/images/head_logo.svg) no-repeat 0 0 / 65px }
+
+/* Footer */
+#footer{background:#191919;padding:40px 18px 60px 18px}
+#footer .footerMenu{display:flex;align-items: center;}
+#footer .footerMenu a{position:relative;display:block;font-size:15px;line-height:18px;color:#fff;font-weight:500;}
+#footer .footerMenu a + a{margin-left:12px;padding-left:12px}
+#footer .footerMenu a + a:before{display:block;content:'';width:1px;height:10px;background:#7E7E7E;position:absolute;top:50%;left:0;transform: translateY(-50%);}
+#footer .footerMenu + .btn{margin-top:60px}
+#footer .htmlBanner{margin-top:18px}
+#footer .footerIconBtnGroup{display:flex;align-items:center;column-gap:20px;margin-top:30px}
+#footer .familySite{margin-top:44px;display:flex;width:100%;height:48px;appearance: none;-webkit-appearance:none;border:1px solid #222;color:#fff;font-size:14px;font-weight:700;padding:0 18px;background:transparent url(/public/images/arr_family_site.svg) no-repeat right 18px top 50% / 16px;}
+#footer .familySite:active{border-color:#5b5b5b}
+#footer .familySite option{background:#000}
+#footer .footerTermMenu{margin-top:30px;display:flex;align-items: center;}
+#footer .footerTermMenu a{position:relative;display:block;font-size:14px;line-height:18px;color:#9A9A9A;font-weight:400;}
+#footer .footerTermMenu a.bold{font-weight:700}
+#footer .footerTermMenu a + a{margin-left:12px;padding-left:12px}
+#footer .footerTermMenu a + a:before{display:block;content:'';width:1px;height:8px;background:#7E7E7E;position:absolute;top:50%;left:0;transform: translateY(-50%);}
+#footer .footerText{margin-top:25px;font-size:13px;line-height:16px;color:#5B5B5B;}
+#footer .footerText p + p{margin-top:6px}
+
+/* Button */
+.btn{display:inline-flex;align-items: center;justify-content: center;width:auto;border-radius:4px;font-size:14px;padding:0 16px}
+.btn.full{width:100%}
+.btn.big{height:50px;font-weight:600;}
+.btn.md{height:40px}
+.btn.sm{height:34px;font-weight:700}
+
+.btn.text.blue{color:#2970FF}
+
+.btn.outline{border-style:solid;border-width:1px;}
+.btn.outline.blue{border-color:#2970FF;color:#2970FF}
+.btn.outline.gray{border-color:#CDCDCD;color:#222}
+
+.btn.contain.blue{background-color:#2970FF;color:#fff}
+
+/* iconBtn */
+.iconBtn{display:inline-block;align-items: center;justify-content: center;width:40px;height:40px;text-indent:-9999em;background-repeat:no-repeat;background-size:40px;background-position:0 0}
+.iconBtn.kakao{background-image:url(/public/images/icon_btn_kakao.svg)}
+.iconBtn.facebook{background-image:url(/public/images/icon_btn_facebook.svg)}
+.iconBtn.linkedIn{background-image:url(/public/images/icon_btn_linkedIn.svg)}
+.iconBtn.youtube{background-image:url(/public/images/icon_btn_youtube.svg)}
