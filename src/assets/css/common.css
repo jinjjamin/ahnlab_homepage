@@ -117,3 +117,10 @@ input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
 .iconBtn.facebook{background-image:url(/public/images/icon_btn_facebook.svg)}
 .iconBtn.linkedIn{background-image:url(/public/images/icon_btn_linkedIn.svg)}
 .iconBtn.youtube{background-image:url(/public/images/icon_btn_youtube.svg)}
+
+/* Form */
+/* Input text */
+.inpText{display:flex;width:100%;height:42px;border:1px solid #EEF1F4;border-radius:4px;padding:0 18px;font-size:18px;font-weight:600}
+
+/* allMenuWrap */
+.allMenuWrap{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:100}
