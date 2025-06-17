@@ -33,7 +33,6 @@ const Layout:React.FC<LayoutProps> = ({children, pageTitle, logo}) => {
         });
 
         document.addEventListener('scroll' , ()=> {
-            console.log(window.scrollY)
             if(window.scrollY >= 10){
                 document.querySelector('#header')?.classList.add('scroll-header');
             }
