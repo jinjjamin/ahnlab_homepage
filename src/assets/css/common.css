@@ -62,6 +62,7 @@ a:link, a:visited, a:hover, a:active, a:focus { text-decoration:none; }
 input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
 
 /* Layout*/
+body:has(.allMenuWrap.show){overflow:hidden}
 #wrap{position:relative;}
 .container{position:relative;padding-top:68px;height:100%}
 #contents{padding:0 18px}
@@ -131,9 +132,21 @@ input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
 .allMenuWrap .allMenu .allMenuHead .cont{padding:0 18px 22px 18px}
 .allMenuWrap .allMenu .allMenuHead .cont .inpText{background:#EEF1F4;border-color:#EEF1F4;font-size:14px}
 .allMenuWrap .allMenu .allMenuHead .cont .allMainMenu{margin-top:16px;display:flex;align-items: center;justify-content: center;}
-.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu [class*='menu']{flex:1}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu [class*='menu']{flex:1;display:flex;align-items:center;justify-content: center;height:42px;}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu [class*='menu']:before{display:block;content:'';width:42px;height:42px;background-repeat:no-repeat;background-position:0 0;background-size:42px}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu .menu01:before{background-image:url(/public/images/ico_all_main_menu01.svg)}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu .menu02:before{background-image:url(/public/images/ico_all_main_menu02.svg)}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu .menu03:before{background-image:url(/public/images/ico_all_main_menu03.svg)}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu [class*='menu'] span{display:block;font-size:11px;font-weight:600;line-height:16px;margin-left:8px}
 
-.allMenuWrap .allMenu .allMenuCont{overflow-y:auto}
+.allMenuWrap .allMenu .allMenuCont{overflow-y:auto;border-top:1px solid #F1F2F4;height:100%}
+.allMenuWrap .allMenu .allMenuArea{position:relative;}
+.allMenuWrap .allMenu .allMenuArea .allMenuDep{}
+.allMenuWrap .allMenu .allMenu1Dep{display:block;font-size:14px;font-weight:700;line-height:18px;padding:13px 0 13px 18px;width:140px}
+.allMenuWrap .allMenu .allMenu2DepList{display:none;position:absolute;top:0;left:140px;right:0;border-left:1px solid #F1F2F4}
+.allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep{position:relative;display:block;font-size:14px;font-weight:600;line-height:18px;padding:019px 16px}
+.allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep + ul{background:#F9FBFD;padding:0 18px 20px 18px}
+.allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep + ul a{display:block;font-size:13px;line-height:16px;padding:14px 12px}
 
 /* 보여질 때 */
 .allMenuWrap.show {opacity: 1;pointer-events: auto;}
