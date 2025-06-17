@@ -23,6 +23,14 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
         }, 300); // transition-duration에 맞춤
     };
 
+    const [isDep2State , setIsDep2State] = useState<{ [key: number]: boolean }>({});
+    const dep2Handler = (index : number)=> {
+        setIsDep2State((prev) => ({
+            ...prev,
+            [index]: !prev[index], // 해당 인덱스만 토글
+        }));
+    }
+
     return (
         <>
             <div className={`allMenuWrap ${visible ? 'show' : 'hide'}`}>
@@ -48,78 +56,98 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                     </div>
                     <div className="allMenuCont">
                         <div className="allMenuArea">
-                            <div className="allMenuDep">
+                            <div className="allMenuDep on">
                                 <Link to="#" className="allMenu1Dep">제품</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(1)}>메뉴</Link>
+                                        {
+                                            isDep2State[1] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(2)}>메뉴</Link>
+                                        {
+                                            isDep2State[2] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(3)}>메뉴</Link>
+                                        {
+                                            isDep2State[3] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(4)}>메뉴</Link>
+                                        {
+                                            isDep2State[4] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(5)}>메뉴</Link>
+                                        {
+                                            isDep2State[5] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                              </div>
@@ -127,88 +155,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">서비스</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(6)}>메뉴</Link>
+                                        {
+                                            isDep2State[6] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(7)}>메뉴</Link>
+                                        {
+                                            isDep2State[7] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(8)}>메뉴</Link>
+                                        {
+                                            isDep2State[8] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(9)}>메뉴</Link>
+                                        {
+                                            isDep2State[9] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(10)}>메뉴</Link>
+                                        {
+                                            isDep2State[10] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(11)}>메뉴</Link>
+                                        {
+                                            isDep2State[11] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -216,88 +268,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">솔루션</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(12)}>메뉴</Link>
+                                        {
+                                            isDep2State[12] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(13)}>메뉴</Link>
+                                        {
+                                            isDep2State[13] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(14)}>메뉴</Link>
+                                        {
+                                            isDep2State[14] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(15)}>메뉴</Link>
+                                        {
+                                            isDep2State[15] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(16)}>메뉴</Link>
+                                        {
+                                            isDep2State[16] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(17)}>메뉴</Link>
+                                        {
+                                            isDep2State[17] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -305,88 +381,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">구매</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(18)}>메뉴</Link>
+                                        {
+                                            isDep2State[18] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(19)}>메뉴</Link>
+                                        {
+                                            isDep2State[19] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(20)}>메뉴</Link>
+                                        {
+                                            isDep2State[20] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(21)}>메뉴</Link>
+                                        {
+                                            isDep2State[21] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(22)}>메뉴</Link>
+                                        {
+                                            isDep2State[22] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(23)}>메뉴</Link>
+                                        {
+                                            isDep2State[23] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -394,88 +494,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">고객지원</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(24)}>메뉴</Link>
+                                        {
+                                            isDep2State[24] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(25)}>메뉴</Link>
+                                        {
+                                            isDep2State[25] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(26)}>메뉴</Link>
+                                        {
+                                            isDep2State[26] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(27)}>메뉴</Link>
+                                        {
+                                            isDep2State[27] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(28)}>메뉴</Link>
+                                        {
+                                            isDep2State[28] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(29)}>메뉴</Link>
+                                        {
+                                            isDep2State[29] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -483,88 +607,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">콘텐츠 센터</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(30)}>메뉴</Link>
+                                        {
+                                            isDep2State[30] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(31)}>메뉴</Link>
+                                        {
+                                            isDep2State[31] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(32)}>메뉴</Link>
+                                        {
+                                            isDep2State[32] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(33)}>메뉴</Link>
+                                        {
+                                            isDep2State[33] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(34)}>메뉴</Link>
+                                        {
+                                            isDep2State[34] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(35)}>메뉴</Link>
+                                        {
+                                            isDep2State[35] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -572,88 +720,112 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                                 <Link to="#" className="allMenu1Dep">파트너</Link>
                                 <div className="allMenu2DepList">
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(36)}>메뉴</Link>
+                                        {
+                                            isDep2State[36] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(37)}>메뉴</Link>
+                                        {
+                                            isDep2State[37] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(38)}>메뉴</Link>
+                                        {
+                                            isDep2State[38] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(39)}>메뉴</Link>
+                                        {
+                                            isDep2State[39] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(40)}>메뉴</Link>
+                                        {
+                                            isDep2State[40] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                     <div className="allMenu2DepItem">
-                                        <Link to="#" className="allMenu2Dep">메뉴</Link>
-                                        <ul>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                            <li><Link to="#">메뉴</Link></li>
-                                        </ul>
+                                        <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(41)}>메뉴</Link>
+                                        {
+                                            isDep2State[41] && (
+                                                <ul>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                    <li><Link to="#">메뉴</Link></li>
+                                                </ul>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>

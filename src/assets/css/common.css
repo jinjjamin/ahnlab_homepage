@@ -141,12 +141,15 @@ body:has(.allMenuWrap.show){overflow:hidden}
 
 .allMenuWrap .allMenu .allMenuCont{overflow-y:auto;border-top:1px solid #F1F2F4;height:100%}
 .allMenuWrap .allMenu .allMenuArea{position:relative;}
-.allMenuWrap .allMenu .allMenuArea .allMenuDep{}
 .allMenuWrap .allMenu .allMenu1Dep{display:block;font-size:14px;font-weight:700;line-height:18px;padding:13px 0 13px 18px;width:140px}
-.allMenuWrap .allMenu .allMenu2DepList{display:none;position:absolute;top:0;left:140px;right:0;border-left:1px solid #F1F2F4}
+.allMenuWrap .allMenu .allMenu2DepList{display:none;position:absolute;top:0;left:140px;right:0;bottom:0;border-left:1px solid #F1F2F4}
+.allMenuWrap .allMenu .allMenu2DepList .allMenu2DepItem{border-bottom:1px solid #F1F2F4}
 .allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep{position:relative;display:block;font-size:14px;font-weight:600;line-height:18px;padding:019px 16px}
 .allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep + ul{background:#F9FBFD;padding:0 18px 20px 18px}
 .allMenuWrap .allMenu .allMenu2DepList .allMenu2Dep + ul a{display:block;font-size:13px;line-height:16px;padding:14px 12px;}
+
+.allMenuWrap .allMenu .allMenuArea .allMenuDep.on .allMenu1Dep{color:#2970FF}
+.allMenuWrap .allMenu .allMenuArea .allMenuDep.on .allMenu2DepList{display:block}
 
 /* 보여질 때 */
 .allMenuWrap.show {opacity: 1;pointer-events: auto;}
