@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 
 /* Components */
 import Header from './Header';
@@ -10,13 +11,38 @@ interface LayoutProps {
 }
 
 const Layout:React.FC<LayoutProps> = ({children, pageTitle, logo}) => {
-    const vh = window.innerHeight;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-    window.addEventListener("resize", () => {
+    useEffect(() => {
         const vh = window.innerHeight;
+        const footer = document.querySelector('#footer') as HTMLDivElement || null;
+        const contents = document.querySelector('#contents') as HTMLDivElement || null;
+
         document.documentElement.style.setProperty("--vh", `${vh}px`);
+        if(footer && contents){
+            contents.style.minHeight = `${vh - footer.clientHeight}px`;
+        }
+
+        window.addEventListener("resize", () => {
+            const vh = window.innerHeight;
+            const footer = document.querySelector('#footer') as HTMLDivElement || null;
+            const contents = document.querySelector('#contents') as HTMLDivElement || null;
+
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+            if(footer && contents){
+                contents.style.minHeight = `${vh - footer.clientHeight}px`;
+            }
+        });
+
+        document.addEventListener('scroll' , ()=> {
+            console.log(window.scrollY)
+            if(window.scrollY >= 10){
+                document.querySelector('#header')?.classList.add('scroll-header');
+            }
+            else{
+                document.querySelector('#header')?.classList.remove('scroll-header');
+            }
+        })
     });
+
 
     return (
         <>

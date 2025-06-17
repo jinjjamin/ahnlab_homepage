@@ -39,7 +39,7 @@ url('../font/Pretendard-Black.otf') format('opentype');font-weight:900;font-styl
 html, body { position:relative; -webkit-font-smoothing:antialiased; height:100%; touch-action:auto; }
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, button, address, em, img, small, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, hr { margin:0; padding:0; box-sizing:border-box; }
 html { -webkit-touch-callout:none;margin:0 auto}
-body { padding:0; background: #fff; font-family:'Pretendard', sans-serif; font-size:16px; font-weight:400; color:#000; box-sizing:border-box; min-width:280px; letter-spacing:-0.048em; overflow-y:hidden}
+body { padding:0; background: #fff; font-family:'Pretendard', sans-serif; font-size:16px; font-weight:400; color:#000; box-sizing:border-box; min-width:280px; letter-spacing:-0.048em;}
 h1, h2, h3, h4, h5, h6 { font-weight:normal }
 ol, ul, li { list-style:none }
 table { width:100%; border-collapse:collapse; border-spacing:0 }
@@ -62,12 +62,13 @@ a:link, a:visited, a:hover, a:active, a:focus { text-decoration:none; }
 input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
 
 /* Layout*/
-#wrap{position:relative;overflow-y:auto}
+#wrap{position:relative;}
 .container{position:relative;padding-top:68px;height:100%}
 #contents{padding:0 18px}
 
 /* Header */
-#header{position:fixed;top:0;left:0;right:0;display:flex;align-items: center;justify-content: space-between;height:60px;background:transparent;padding:0 18px;z-index:10}
+#header{position:fixed;top:0;left:0;right:0;display:flex;align-items: center;justify-content: space-between;height:60px;background:transparent;padding:0 18px;z-index:10;background:#fff;transition:box-shadow 0.3s ease}
+#header.scroll-header{box-shadow:0 0 15px rgba(0, 0, 0, 0.5)}
 #header > div{position:relative;z-index:10}
 #header .alignCenter{position:absolute;top:0;bottom:0;left:0;right:0;z-index:5;display:flex;align-items: center;height:100%;justify-content: center;}
 #header .pageTitle{font-size:16px;font-weight:700;text-align:center;}
@@ -124,7 +125,15 @@ input:-webkit-autofill { -webkit-box-shadow:0 0 0px 1000px white inset; }
 
 /* allMenuWrap */
 .allMenuWrap{position:fixed;top:0;left:0;right:0;bottom:0;background: rgba(0,0,0,0.5);z-index:100;opacity: 0;pointer-events: none;transition: opacity 0.3s ease;}
-.allMenuWrap .allMenu {position: absolute;top: 0;right: -100%;width: 100%;height: 100%;background: #fff;transition: right 0.3s ease;}
+.allMenuWrap .allMenu {position: absolute;top: 0;right: -100%;width: 100%;height: 100%;background: #fff;transition: right 0.3s ease;display:flex;flex-wrap: nowrap;flex-direction: column;}
+.allMenuWrap .allMenu .allMenuHead .head{position:relative;display:flex;height:60px;display:flex;align-items: center;justify-content: flex-end;padding:0 18px}
+.allMenuWrap .allMenu .allMenuHead .head .btnAllMenuClose{display:block;text-indent:-9999em;width:28px;height:28px;background:url(/public/images/btn_head_close.svg) no-repeat 50% / 28px}
+.allMenuWrap .allMenu .allMenuHead .cont{padding:0 18px 22px 18px}
+.allMenuWrap .allMenu .allMenuHead .cont .inpText{background:#EEF1F4;border-color:#EEF1F4;font-size:14px}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu{margin-top:16px;display:flex;align-items: center;justify-content: center;}
+.allMenuWrap .allMenu .allMenuHead .cont .allMainMenu [class*='menu']{flex:1}
+
+.allMenuWrap .allMenu .allMenuCont{overflow-y:auto}
 
 /* 보여질 때 */
 .allMenuWrap.show {opacity: 1;pointer-events: auto;}

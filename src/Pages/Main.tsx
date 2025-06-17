@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <>
             <Layout pageTitle={"레이아웃"}>
-                test
+                콘텐츠
             </Layout>
         </>
     )
