@@ -59,7 +59,7 @@ const Allmenu:React.FC<AllmenuProps> = ({onClose}) => {
                             <div className="allMenuDep on">
                                 <Link to="#" className="allMenu1Dep">제품</Link>
                                 <div className="allMenu2DepList">
-                                    <div className="allMenu2DepItem">
+                                    <div className={`allMenu2DepItem ${isDep2State[1]  ? "on" : ""}`}>
                                         <Link to="#" className="allMenu2Dep" onClick={()=> dep2Handler(1)}>메뉴</Link>
                                         {
                                             isDep2State[1] && (

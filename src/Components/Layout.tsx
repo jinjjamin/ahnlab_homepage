@@ -38,7 +38,6 @@ const Layout:React.FC<LayoutProps> = ({children, pageTitle, logo}) => {
             }
             else{
                 document.querySelector('#header')?.classList.remove('scroll-header');
-                console.log('하이');
             }
         })
     });
