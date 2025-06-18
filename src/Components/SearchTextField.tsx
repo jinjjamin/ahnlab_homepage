@@ -11,7 +11,10 @@ interface SearchTextFieldProps extends React.InputHTMLAttributes<HTMLInputElemen
 const SearchTextField:React.FC<SearchTextFieldProps> = ({type, ...rest}) => {
     return (
         <>
-           <TextField type={type} {...rest}/>
+            <div className="searchTextFieldArea">
+                <TextField type={type} {...rest}/>
+                <Link to="#" className="btnSearch">검색</Link>
+           </div>
         </>
     )
 }
