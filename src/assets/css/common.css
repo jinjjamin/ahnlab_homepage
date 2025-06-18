@@ -154,7 +154,7 @@ body:has(.allMenuWrap.show){overflow:hidden}
 .allMenuWrap .allMenu .allMenuArea .allMenuDep.on .allMenu1Dep{color:#2970FF;}
 .allMenuWrap .allMenu .allMenuArea .allMenuDep.on .allMenu2DepList{display:block;}
 
-.allMenuWrap .allMenu .allMenu2DepList .allMenu2DepItem.on .allMenu2Dep{color:#2970FF}
+.allMenuWrap .allMenu .allMenu2DepList .allMenu2DepItem.on .allMenu2Dep{color:#2970FF;}
 .allMenuWrap .allMenu .allMenu2DepList .allMenu2DepItem.on .allMenu2Dep:after{transform:rotate(180deg) translateY(50%)}
 
 /* 보여질 때 */
