@@ -15,7 +15,7 @@ const Footer = () => {
                     <Link to="#">Contact Us</Link>
                 </div>
                 <Button text="뉴스레터 구독신청" style="contain" size="big" color="blue" full={true} />
-                <div className="htmlBanner"><img src="/public/images/_temp/img_html_banner.svg" alt="" style={{width : "100%"}} /></div>
+                <div className="htmlBanner"><img src={`${import.meta.env.BASE_URL}images/_temp/img_html_banner.svg`} alt="" style={{width : "100%"}} /></div>
                 <div className="footerIconBtnGroup">
                     <IconButton text="카카오 채널" type="kakao" />
                     <IconButton text="페이스북" type="facebook" />
